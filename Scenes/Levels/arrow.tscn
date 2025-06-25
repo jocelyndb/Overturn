@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=4 uid="uid://dltry7oahgrcm"]
+
+[ext_resource type="Shader" uid="uid://d2h7ac8tvycym" path="res://Scenes/Tiles/background_wood.gdshader" id="1_67mhm"]
+[ext_resource type="TileSet" uid="uid://dlnadw4fdu1gc" path="res://Scenes/Tiles/token_tiles.tres" id="2_vho4d"]
+[ext_resource type="Script" uid="uid://eu0qreojp1wo" path="res://Scripts/Tiles/tile_map.gd" id="3_cjiit"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lwjya"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tdbkj"]
+noise = SubResource("FastNoiseLite_lwjya")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e4etf"]
+shader = ExtResource("1_67mhm")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_tdbkj")
+shader_parameter/knobStrength = 20.0
+shader_parameter/pixelsPerPlank = 40.0
+shader_parameter/linesPerPlank = 0.75
+shader_parameter/verticalScale = 200.0
+shader_parameter/lineStrength = 1.79
+shader_parameter/plankLength = 200.0
+
+[sub_resource type="Gradient" id="Gradient_802w4"]
+offsets = PackedFloat32Array(0.00990099, 1)
+colors = PackedColorArray(0.732076, 0.443646, 0.201978, 1, 0.827451, 0.647059, 0.490196, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lwjya"]
+gradient = SubResource("Gradient_802w4")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e4etf")
+position = Vector2(-24, -34)
+rotation = 1.04022
+scale = Vector2(8.274, 2000)
+texture = SubResource("GradientTexture1D_lwjya")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.95, 1.95)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQD//wAAAAAAAAAAAQD/////AAAAAAAAAQAAAP//AAAAAAAAAQD+//7/AAAAAAAAAQD///7/AAAAAAAAAQAAAP7/AAAAAAAAAQD//wEAAAAAAAAAAQAAAAEAAAAAAAAAAQABAP7/AAAAAAAAAQD///3/AAAAAAAAAQD//wIAAAAAAAAAAQAAAAIAAAAAAAAAAQAAAP3/AAAAAAAAAQD+////AAAAAAAAAQD9////AAAAAAAAAQABAP//AAAAAAAAAQACAP//AAAAAAAAAQA=")
+tile_set = ExtResource("2_vho4d")
+script = ExtResource("3_cjiit")
