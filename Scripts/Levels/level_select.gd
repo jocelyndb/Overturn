@@ -10,7 +10,6 @@ func _ready():
 		var text = Label.new()
 		text.text = str(level.num)
 		text.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-		#text.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		button.add_child(text)
 		print("Button size: ", button.size)
 		button.pressed.connect(func (): 

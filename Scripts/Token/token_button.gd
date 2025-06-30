@@ -20,19 +20,17 @@ class_name TokenButton
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 func _ready() -> void:
-	#material.set("shader_paramater/flipped", flipped);
 	await get_tree().create_timer(randf_range(0.1,0.3)).timeout
 	if not flipped:
+		AudioManager.play(&"tink", 0.8)
 		sprite.play(&"flip")
 
 func flip() -> void:
+	AudioManager.play(&"tink", 1.2)
+	
 	flipped = !flipped;
 	if flipped:
 		sprite.play_backwards(&"flip")
 	else:
 		sprite.play(&"flip")
-	#print("Flipped? ", flipped)
-	#material.set("shader_parameter/flipped", flipped);
-	#print(material.get("shader_parameter/flipped"))
-	# TODO: animate flipping and change texture
 	
