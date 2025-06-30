@@ -1,31 +1,34 @@
 [gd_scene load_steps=9 format=3 uid="uid://dne2p6y3wx5ks"]
 
 [ext_resource type="Script" uid="uid://b5pomeqwm03ol" path="res://Scripts/Token/token_button.gd" id="1_dxgyh"]
-[ext_resource type="Texture2D" uid="uid://coqvo3aeqi4a1" path="res://Assets/Sprites/Token/token_diagonal_spritesheet_shadows.png" id="2_xlkv8"]
+[ext_resource type="Texture2D" uid="uid://c2mi0hshj5fuk" path="res://Assets/Sprites/Token/TextureFrames/token_diagonal_canvas_texture.tres" id="2_dxgyh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxnlk"]
-atlas = ExtResource("2_xlkv8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlkv8"]
+atlas = ExtResource("2_dxgyh")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8ddu"]
-atlas = ExtResource("2_xlkv8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxnlk"]
+atlas = ExtResource("2_dxgyh")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4l75w"]
-atlas = ExtResource("2_xlkv8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8ddu"]
+atlas = ExtResource("2_dxgyh")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xnfp"]
-atlas = ExtResource("2_xlkv8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l75w"]
+atlas = ExtResource("2_dxgyh")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fff4l"]
-atlas = ExtResource("2_xlkv8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xnfp"]
+atlas = ExtResource("2_dxgyh")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8aw0b"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlkv8")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bxnlk")
 }, {
@@ -37,9 +40,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2xnfp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fff4l")
 }],
 "loop": false,
 "name": &"flip",

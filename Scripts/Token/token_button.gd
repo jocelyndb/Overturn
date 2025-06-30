@@ -22,7 +22,8 @@ class_name TokenButton
 func _ready() -> void:
 	#material.set("shader_paramater/flipped", flipped);
 	await get_tree().create_timer(randf_range(0.1,0.3)).timeout
-	sprite.play(&"flip")
+	if not flipped:
+		sprite.play(&"flip")
 
 func flip() -> void:
 	flipped = !flipped;
@@ -30,7 +31,7 @@ func flip() -> void:
 		sprite.play_backwards(&"flip")
 	else:
 		sprite.play(&"flip")
-	print("Flipped? ", flipped)
+	#print("Flipped? ", flipped)
 	#material.set("shader_parameter/flipped", flipped);
 	#print(material.get("shader_parameter/flipped"))
 	# TODO: animate flipping and change texture

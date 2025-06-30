@@ -11,16 +11,30 @@ config_version=5
 [application]
 
 config/name="Overturn"
-run/main_scene="res://Scenes/Tiles/tile_map_template.tscn"
+run/main_scene="uid://b6tw32lqfho1d"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*res://Autoload/audio_manager.tscn"
+Levels="*res://Autoload/levels.tscn"
+
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
+
+[filesystem]
+
+import/blender/enabled=false
+
+[gui]
+
+theme/custom="uid://dnlkbp4r1rjgo"
+theme/custom_font="uid://7dduh03mxqkb"
 
 [rendering]
 

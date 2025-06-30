@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=3 format=3 uid="uid://3le4tafubiuh"]
+
+[ext_resource type="Script" uid="uid://0h7uu2mnxy3n" path="res://Scripts/Levels/level_info.gd" id="1_napj2"]
+[ext_resource type="PackedScene" uid="uid://ddihcxlelo7ek" path="res://Scenes/Levels/TokenTileMaps/diagonal/diagonal-mess.tscn" id="2_napj2"]
+
+[resource]
+script = ExtResource("1_napj2")
+tiles = ExtResource("2_napj2")
+name = "First"
+num = 19
+game_level = true
+chapter = 2
+metadata/_custom_type_script = "uid://0h7uu2mnxy3n"

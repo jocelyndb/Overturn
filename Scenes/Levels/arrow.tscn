@@ -1,23 +1,17 @@
-[gd_scene load_steps=9 format=4 uid="uid://dltry7oahgrcm"]
+[gd_scene load_steps=7 format=4 uid="uid://dltry7oahgrcm"]
 
 [ext_resource type="Shader" uid="uid://d2h7ac8tvycym" path="res://Scenes/Tiles/background_wood.gdshader" id="1_67mhm"]
 [ext_resource type="TileSet" uid="uid://dlnadw4fdu1gc" path="res://Scenes/Tiles/token_tiles.tres" id="2_vho4d"]
 [ext_resource type="Script" uid="uid://eu0qreojp1wo" path="res://Scripts/Tiles/tile_map.gd" id="3_cjiit"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_lwjya"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tdbkj"]
-noise = SubResource("FastNoiseLite_lwjya")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e4etf"]
 shader = ExtResource("1_67mhm")
-shader_parameter/noise_tex = SubResource("NoiseTexture2D_tdbkj")
-shader_parameter/knobStrength = 20.0
-shader_parameter/pixelsPerPlank = 40.0
-shader_parameter/linesPerPlank = 0.75
-shader_parameter/verticalScale = 200.0
-shader_parameter/lineStrength = 1.79
-shader_parameter/plankLength = 200.0
+shader_parameter/light_color = Color(0.952941, 0.858824, 0.74902, 1)
+shader_parameter/dark_color = Color(0.74902, 0.619608, 0.490196, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
 
 [sub_resource type="Gradient" id="Gradient_802w4"]
 offsets = PackedFloat32Array(0.00990099, 1)

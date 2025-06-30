@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=3 format=3 uid="uid://bi46o8esou0th"]
+
+[ext_resource type="Script" uid="uid://0h7uu2mnxy3n" path="res://Scripts/Levels/level_info.gd" id="1_ryxwt"]
+[ext_resource type="PackedScene" uid="uid://dgv1bdmvb6lun" path="res://Scenes/Menus/level_select.tscn" id="2_xfvlc"]
+
+[resource]
+script = ExtResource("1_ryxwt")
+tiles = ExtResource("2_xfvlc")
+name = ""
+num = -1
+game_level = false
+chapter = 1
+metadata/_custom_type_script = "uid://0h7uu2mnxy3n"

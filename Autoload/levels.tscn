@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cde0cmhqihbi7"]
+
+[ext_resource type="Script" uid="uid://csal773gb4cx7" path="res://Scripts/Levels/levels.gd" id="1_o5dm0"]
+[ext_resource type="Resource" uid="uid://bidr10ohoj4og" path="res://Resources/levels.tres" id="2_hcsqp"]
+[ext_resource type="Resource" uid="uid://bi46o8esou0th" path="res://Resources/LevelInfo/level_select.tres" id="3_8e5h8"]
+
+[node name="Levels" type="Node"]
+script = ExtResource("1_o5dm0")
+levels_resource = ExtResource("2_hcsqp")
+level_select = ExtResource("3_8e5h8")

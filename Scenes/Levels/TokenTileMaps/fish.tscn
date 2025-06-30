@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=4 uid="uid://dsqr21fngyug2"]
+
+[ext_resource type="Script" uid="uid://c7fm8ronf8a3c" path="res://Scripts/Tiles/token_tile_map.gd" id="1_jgmqu"]
+[ext_resource type="TileSet" uid="uid://b4p5u2osutcdd" path="res://Scenes/Tiles/grid_tiles.tres" id="2_qjy51"]
+[ext_resource type="TileSet" uid="uid://dlnadw4fdu1gc" path="res://Scenes/Tiles/token_tiles.tres" id="3_3j3pi"]
+[ext_resource type="Script" uid="uid://eu0qreojp1wo" path="res://Scripts/Tiles/tile_map.gd" id="4_qrin8"]
+
+[node name="TokenTileMap" type="Node"]
+script = ExtResource("1_jgmqu")
+
+[node name="Grid" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAA=")
+tile_set = ExtResource("2_qjy51")
+
+[node name="Tokens" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAQAAAP//AAAAAAAAAQD//wAAAAAAAAAAAQAAAP7/AAAAAAAAAQD+/wAAAAAAAAAAAQD///7/AAAAAAAAAQABAP7/AAAAAAAAAQAAAAAAAAAAAAAAAQD+//7/AAAAAAAAAQD+////AAAAAAAAAQD+/wEAAAAAAAAAAQA=")
+tile_set = ExtResource("3_3j3pi")
+script = ExtResource("4_qrin8")

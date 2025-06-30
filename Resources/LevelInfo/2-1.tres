@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=3 format=3 uid="uid://d362t3ur0gsyt"]
+
+[ext_resource type="Script" uid="uid://0h7uu2mnxy3n" path="res://Scripts/Levels/level_info.gd" id="1_lkiv5"]
+[ext_resource type="PackedScene" uid="uid://ckkgh1dbkyvpc" path="res://Scenes/Levels/TokenTileMaps/diagonal/diagonal-intro.tscn" id="2_lkiv5"]
+
+[resource]
+script = ExtResource("1_lkiv5")
+tiles = ExtResource("2_lkiv5")
+name = "First"
+num = 15
+game_level = true
+chapter = 2
+metadata/_custom_type_script = "uid://0h7uu2mnxy3n"

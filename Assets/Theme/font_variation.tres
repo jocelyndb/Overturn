@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dmssjf3nbx2fq"]
+
+[ext_resource type="FontFile" uid="uid://7dduh03mxqkb" path="res://Assets/Fonts/Abordage-Regular.otf" id="1_gqp7u"]
+
+[resource]
+base_font = ExtResource("1_gqp7u")
+variation_embolden = 0.5
+baseline_offset = 0.1

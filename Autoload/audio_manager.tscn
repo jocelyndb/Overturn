@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ihkkuv8wdtx3"]
+
+[ext_resource type="Script" uid="uid://daw0ul3g4uqyn" path="res://Scripts/Game/audio_manager.gd" id="1_1qp78"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_1qp78")
+sfx_directory = "res://Assets/Audio/SFX"
+bg_music = "uid://ewxtiadodqid"
+bg_intensity = 0.1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4

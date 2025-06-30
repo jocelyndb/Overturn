@@ -1,44 +1,79 @@
-[gd_scene load_steps=9 format=4 uid="uid://cdn68p7jutsit"]
+[gd_scene load_steps=12 format=3 uid="uid://cdn68p7jutsit"]
 
-[ext_resource type="TileSet" uid="uid://dlnadw4fdu1gc" path="res://Scenes/Tiles/token_tiles.tres" id="1_2daln"]
 [ext_resource type="Shader" uid="uid://d2h7ac8tvycym" path="res://Scenes/Tiles/background_wood.gdshader" id="1_lwjya"]
-[ext_resource type="Script" uid="uid://eu0qreojp1wo" path="res://Scripts/Tiles/tile_map.gd" id="2_tj7jy"]
+[ext_resource type="Script" uid="uid://ck4bqm8axe24r" path="res://Scripts/Game/game.gd" id="1_tdbkj"]
+[ext_resource type="PackedScene" uid="uid://cev15exnnukfu" path="res://Scenes/Levels/TokenTileMaps/1-2.tscn" id="2_lwjya"]
+[ext_resource type="Script" uid="uid://criaw3q37bfev" path="res://Scripts/Light/mouse_light.gd" id="4_tdbkj"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_lwjya"]
+[sub_resource type="Environment" id="Environment_tdbkj"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.41
+glow_bloom = 0.48
+glow_hdr_threshold = 0.94
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tdbkj"]
-noise = SubResource("FastNoiseLite_lwjya")
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e4etf"]
+
+[sub_resource type="Compositor" id="Compositor_jm710"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e4etf"]
 shader = ExtResource("1_lwjya")
-shader_parameter/noise_tex = SubResource("NoiseTexture2D_tdbkj")
-shader_parameter/knobStrength = 20.0
-shader_parameter/pixelsPerPlank = 40.0
-shader_parameter/linesPerPlank = 0.75
-shader_parameter/verticalScale = 200.0
-shader_parameter/lineStrength = 1.79
-shader_parameter/plankLength = 200.0
+shader_parameter/light_color = Color(0.423669, 0.237125, 0.141759, 1)
+shader_parameter/dark_color = Color(0.376471, 0.207519, 0.120819, 1)
+shader_parameter/ring_scale = 5.0
+shader_parameter/wave_scale = 111.77
+shader_parameter/random_scale = 16.02
+shader_parameter/noise_scale = 0.03
 
-[sub_resource type="Gradient" id="Gradient_802w4"]
-offsets = PackedFloat32Array(0.00990099, 1)
-colors = PackedColorArray(0.732076, 0.443646, 0.201978, 1, 0.827451, 0.647059, 0.490196, 1)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_e4etf"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_lwjya"]
-gradient = SubResource("Gradient_802w4")
+[sub_resource type="Gradient" id="Gradient_e4etf"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.315, 0.915)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jm710"]
+gradient = SubResource("Gradient_e4etf")
+width = 2000
+height = 2000
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_tdbkj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tdbkj")
+camera_attributes = SubResource("CameraAttributesPractical_e4etf")
+compositor = SubResource("Compositor_jm710")
 
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_e4etf")
-position = Vector2(-24, -34)
+position = Vector2(-19.0685, -25.5943)
 rotation = 1.04022
-scale = Vector2(8.274, 2000)
-texture = SubResource("GradientTexture1D_lwjya")
+scale = Vector2(3466.7, 2000)
+texture = SubResource("PlaceholderTexture2D_e4etf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.95, 1.95)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAgD//wAAAAAAAAAAAQD/////AAAAAAAAAQAAAP//AAAAAAAAAQD+//7/AAAAAAAAAQD///7/AAAAAAAAAQAAAP7/AAAAAAAAAQD//wEAAAAAAAAAAQAAAAEAAAAAAAAAAQABAP7/AAAAAAAAAQD///3/AAAAAAAAAQD//wIAAAAAAAAAAQAAAAIAAAAAAAAAAgAAAP3/AAAAAAAAAQD+////AAAAAAAAAQABAP//AAAAAAAAAQD+/wAAAAAAAAAAAgD+/wEAAAAAAAAAAQABAAEAAAAAAAAAAQABAAAAAAAAAAAAAQD+/wIAAAAAAAAAAgABAP3/AAAAAAAAAQD9/wAAAAAAAAAAAQD8////AAAAAAAAAQD8/wAAAAAAAAAAAQD8/wEAAAAAAAAAAQACAP//AAAAAAAAAQADAP7/AAAAAAAAAQADAP//AAAAAAAAAQADAAAAAAAAAAAAAQA=")
-tile_set = ExtResource("1_2daln")
-script = ExtResource("2_tj7jy")
+[node name="TokenTileMap" parent="." instance=ExtResource("2_lwjya")]
+
+[node name="MouseLight" type="PointLight2D" parent="."]
+position = Vector2(23, 28)
+scale = Vector2(2, 2)
+energy = 0.36
+shadow_filter_smooth = 9.8
+texture = SubResource("GradientTexture2D_jm710")
+height = 8.0
+script = ExtResource("4_tdbkj")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+position = Vector2(75, -59)
+rotation = -0.825541
+energy = 0.07
+shadow_enabled = true
+height = 0.49
+
+[editable path="TokenTileMap"]

@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b4p5u2osutcdd"]
+
+[ext_resource type="Texture2D" uid="uid://27httvdpcjxl" path="res://Assets/Sprites/Board/Grid/black_cross.png" id="1_ja4h0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0fqt"]
+texture = ExtResource("1_ja4h0")
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_k0fqt")

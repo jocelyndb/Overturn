@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=4 uid="uid://b6tw32lqfho1d"]
+
+[ext_resource type="PackedScene" uid="uid://cdn68p7jutsit" path="res://Scenes/Tiles/tile_map_template.tscn" id="1_38aua"]
+[ext_resource type="Script" uid="uid://8eg6px1acex1" path="res://Scripts/Game/main_menu.gd" id="1_aur2u"]
+[ext_resource type="Texture2D" uid="uid://dpw46vxrw4fp8" path="res://Assets/Sprites/ui/mute_off.png" id="3_penys"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_aur2u")
+
+[node name="Game" parent="." instance=ExtResource("1_38aua")]
+
+[node name="Grid" parent="Game/TokenTileMap" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP//AAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD8/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAD9/wEAAAAAAAAAAAD9////AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAD+//z/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD7//7/AAAAAAAAAAD7//z/AAAAAAAAAAACAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAAAAAD5//7/AAAAAAAAAAD5/wAAAAAAAAAAAAD5////AAAAAAAAAAD6//7/AAAAAAAAAAAFAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAAAAAAAAAAAAAA=")
+
+[node name="Tokens" parent="Game/TokenTileMap" index="1"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQAAAP//AAAAAAAAAQAAAAEAAAAAAAAAAQABAP7/AAAAAAAAAQD+/wEAAAAAAAAAAQABAAEAAAAAAAAAAQD8/wAAAAAAAAAAAQADAP7/AAAAAAAAAQADAP//AAAAAAAAAQD5//7/AAAAAAAAAQD5////AAAAAAAAAQD5/wAAAAAAAAAAAQD6//7/AAAAAAAAAQD6//z/AAAAAAAAAQD5//z/AAAAAAAAAQD5//3/AAAAAAAAAQD7//z/AAAAAAAAAQD7//7/AAAAAAAAAQD9/wEAAAAAAAAAAQAGAAEAAAAAAAAAAQAEAAEAAAAAAAAAAQAGAAIAAAAAAAAAAQAEAAIAAAAAAAAAAQADAAIAAAAAAAAAAQAFAAAAAAAAAAAAAQAFAAMAAAAAAAAAAQACAAMAAAAAAAAAAQD+//z/AAAAAAAAAQACAP3/AAAAAAAAAQADAP3/AAAAAAAAAQD9//7/AAAAAAAAAQD9//3/AAAAAAAAAQD9////AAAAAAAAAQACAAAAAAAAAAAAAQA=")
+
+[node name="LevelsButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -467.0
+offset_top = 192.0
+offset_right = -275.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+focus_mode = 0
+text = "levels"
+metadata/_edit_use_anchors_ = true
+
+[node name="MuteButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = 193.0
+offset_right = -82.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+texture_normal = ExtResource("3_penys")
+
+[editable path="Game"]
+[editable path="Game/TokenTileMap"]

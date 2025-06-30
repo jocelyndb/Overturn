@@ -1,0 +1,9 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://s4lcfkqdlgpb"]
+
+[ext_resource type="Texture2D" uid="uid://dxuvjl6euv8qi" path="res://Assets/Sprites/Token/token_muted.png" id="1_7c43b"]
+[ext_resource type="Texture2D" uid="uid://d3xh7uk8t514o" path="res://Assets/Sprites/Token/TextureFrames/token_sheet_normal.png" id="2_fa7vr"]
+
+[resource]
+diffuse_texture = ExtResource("1_7c43b")
+normal_texture = ExtResource("2_fa7vr")
+specular_shininess = 0.33
